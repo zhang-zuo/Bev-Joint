@@ -3,7 +3,7 @@
 > 由于修改的是实习公司的代码，因此不放出具体代码，仅放开我完成的效果（基本都是自己完成）
 ## 具体效果
 如下视频中演示效果：
-[![](https://bb-embed.herokuapp.com/embed?v=BV1jS4y1w7SW)](https://player.bilibili.com/player.html?aid=274701012&bvid=BV16F411Z7jX&cid=1233046265&page=1)
+【BEV矢量拼接】 https://www.bilibili.com/video/BV16F411Z7jX/?share_source=copy_web&vd_source=768b8afd5311be6054cd380b9eae12e4
 ## 项目说明
 总体思想很简单，就是将每一帧的BEV矢量图，根据每个矢量属于不同实例，将其拼接（目前只是使用**nuScenes数据集**的真实位姿进行推算，之后可以在此真实位姿的基础上添加扰动测试）。
 想法很简单，实现起来还是困难重重。具体的实现流程：
