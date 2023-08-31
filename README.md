@@ -4,6 +4,7 @@
 ## 具体效果
 如下视频中演示效果：
 【BEV矢量拼接--中点采样】 https://www.bilibili.com/video/BV16F411Z7jX/?share_source=copy_web&vd_source=768b8afd5311be6054cd380b9eae12e4
+
 【BEV矢量拼接--栅格地图】 https://www.bilibili.com/video/BV16P411Y7RP/?spm_id_from=333.999.0.0&vd_source=3cdcd5ccae179b42e3c3e1f1413788b6
 ## 项目说明
 总体思想很简单，就是将每一帧的BEV矢量图，根据每个矢量属于不同实例，将其拼接（目前只是使用**nuScenes数据集**的真实位姿进行推算，之后可以在此真实位姿的基础上添加扰动测试）。
