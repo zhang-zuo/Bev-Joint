@@ -3,7 +3,8 @@
 > 由于修改的是实习公司的代码，因此不放出具体代码，仅放开我完成的效果（基本都是自己完成）
 ## 具体效果
 如下视频中演示效果：
-【BEV矢量拼接】 https://www.bilibili.com/video/BV16F411Z7jX/?share_source=copy_web&vd_source=768b8afd5311be6054cd380b9eae12e4
+【BEV矢量拼接--中点采样】 https://www.bilibili.com/video/BV16F411Z7jX/?share_source=copy_web&vd_source=768b8afd5311be6054cd380b9eae12e4
+【BEV矢量拼接--栅格地图】 https://www.bilibili.com/video/BV16P411Y7RP/?spm_id_from=333.999.0.0&vd_source=3cdcd5ccae179b42e3c3e1f1413788b6
 ## 项目说明
 总体思想很简单，就是将每一帧的BEV矢量图，根据每个矢量属于不同实例，将其拼接（目前只是使用**nuScenes数据集**的真实位姿进行推算，之后可以在此真实位姿的基础上添加扰动测试）。
 想法很简单，实现起来还是困难重重。具体的实现流程：
@@ -25,6 +26,7 @@
 栅格地图的方式有以下的优点：
 * 如上面所说，矢量点不应表示实例权重较大的点，因为栅格化的表示感觉更加合理一些
 * 栅格化的表示，可以有效的滤掉一些错误检测的部分，因为中点采样的方式只能相信每次检测的结果，而栅格化的表示可以根据该栅格 "占据" 的概率，滤除很多误检测的部分
+
 实现流程就是简单的将矢量折线段进行栅格化，程序运行后的进行后处理，将栅格地图矢量化（这个后处理让我突然想起来秦通的众包构图。。。）
 ### 两种方法的对比
 |      | 中点采样                                                     | 栅格地图                                                     |
@@ -34,4 +36,5 @@
 
 ### 参考链接
 > 全路径栅格化：https://blog.csdn.net/weixin_41154636/article/details/84886628
-> ZhangSuen算法： https://www.freesion.com/article/8404322208/ 
+>
+>  ZhangSuen算法： https://www.freesion.com/article/8404322208/ 
